@@ -64,7 +64,7 @@ class RobotGait():
 if __name__ == "__main__":
     gait = RobotGait()
     t = 0
-    dt = 0.01
+    dt = 0.1
     times = []
     leg_positions = {1: [], 2: [], 3: [], 4: []}
 

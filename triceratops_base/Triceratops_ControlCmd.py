@@ -83,9 +83,7 @@ class RobotControl:
             thread_update_motor_data.start()
 
             # Control the execution time to avoid CPU overload
-            start_time = time.time()
-            execution_time = time.time() - start_time
-            time.sleep(max(self.dt - execution_time, 0))
+            time.sleep(0.05)
 
 
     def initiate_gait(self, left_leg_move, right_leg_move, leg_height):
@@ -107,8 +105,8 @@ class RobotControl:
         movements = {
             'forward': (1, 1),
             'backward': (-1, -1),
-            'turn_left': (1, -1),
-            'turn_right': (-1, 1)
+            'turn_left': (-1, 1),
+            'turn_right': (1, -1)
         }
         left_leg_move, right_leg_move = movements.get(movement_type, (1, 1))
         self.initiate_gait(left_leg_move, right_leg_move, leg_height)
@@ -199,11 +197,6 @@ class ControlCmd:
 
 
     def motor_position_control(self, position=None):
-        if position is None:
-            position = [[   0   , 0  ,  0  ,  0],
-                            [2500, 1600, 1600 ,2500],
-                            [2000 ,2100, 2100 ,2000]]
-
         for i, motor_list in enumerate(self.leg_motor_list[1:], start=1):
             for j, motor in enumerate(motor_list):
                 # print(int(position[i][j]))
