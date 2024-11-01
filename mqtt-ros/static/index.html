@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MQTT Button Control</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f4f4f9, #e8eaf6);
+            color: #444;
+        }
+        h1 {
+            color: #222;
+            margin-bottom: 25px;
+            font-size: 2em;
+        }
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 500px;
+        }
+        button {
+            padding: 15px;
+            font-size: 1em;
+            color: #fff;
+            background: linear-gradient(145deg, #4b79a1, #283e51);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            background: linear-gradient(145deg, #3b6a8b, #1f3344);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+            transform: translateY(-2px);
+        }
+        button:active {
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            transform: translateY(1px);
+        }
+        .wide {
+            grid-column: span 3;
+        }
+        /* Right panel for control buttons */
+        .right-panel button {
+            background: linear-gradient(145deg, #a14b4b, #511f1f);
+        }
+        .right-panel button:hover {
+            background: linear-gradient(145deg, #8b3b3b, #441717);
+        }
+    </style>
+</head>
+<body>
+    <h1>MQTT Button Control</h1>
+    <div class="button-container">
+        <!-- Left panel buttons -->
+        <div>
+            <button onclick="sendMessage('forward')">Forward</button>
+            <button onclick="sendMessage('left')">Left</button>
+            <button onclick="sendMessage('pause')">Pause</button>
+            <button onclick="sendMessage('right')">Right</button>
+            <button onclick="sendMessage('backward')">Backward</button>
+        </div>
+        <!-- Right panel buttons -->
+        <div class="right-panel">
+            <button onclick="sendMessage('accelerate_forward_backward')">Accel Fwd/Bwd</button>
+            <button onclick="sendMessage('decelerate_forward_backward')">Decel Fwd/Bwd</button>
+            <button onclick="sendMessage('accelerate_left_right')">Accel Left/Right</button>
+            <button onclick="sendMessage('decelerate_left_right')">Decel Left/Right</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage(buttonId) {
+            fetch("http://localhost:5000/send_message", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ button_id: buttonId })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Response:", data);
+                alert(data.status + ": " + data.message);
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+        }
+    </script>
+</body>
+</html>
