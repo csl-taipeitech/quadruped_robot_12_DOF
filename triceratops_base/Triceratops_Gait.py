@@ -25,9 +25,9 @@ class RobotGait():
             leg_1_y = self.h-phase_2_support[1]; leg_2_y = self.h-phase_2_swing[1]; leg_3_y = self.h-phase_2_support[1]; leg_4_y = self.h-phase_2_swing[1]
 
         foot_locations = np.array([[ leg_2_x,   leg_1_x,    leg_3_x,    leg_4_x],
-                                   [-leg_2_y,  -leg_1_y,   -leg_3_y,   -leg_4_y],
-                                   [       0,         0,          0,          0]])
-        
+                                   [       0,         0,          0,          0],
+                                   [ -leg_2_y,   -leg_1_y,  -leg_3_y,  -leg_4_y]])
+                
         state.foot_locations = foot_locations
         return foot_locations
     
