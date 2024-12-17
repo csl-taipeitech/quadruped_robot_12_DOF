@@ -13,8 +13,7 @@ class RobotIK():
     def leg_inverse_kinematics(self, foot_locations):
 
         leg_1_x, leg_2_x, leg_3_x, leg_4_x = foot_locations[0, 0], foot_locations[0, 1], foot_locations[0, 2], foot_locations[0, 3]
-        leg_1_y, leg_2_y, leg_3_y, leg_4_y = foot_locations[1, 0], foot_locations[1, 1], foot_locations[1, 2], foot_locations[1, 3]
-
+        leg_1_y, leg_2_y, leg_3_y, leg_4_y = foot_locations[2, 0], foot_locations[2, 1], foot_locations[2, 2], foot_locations[2, 3]
         #Leg1
         leg_1_x = -leg_1_x
         lower_leg_1 = pi - acos((leg_1_x**2 + leg_1_y**2 - self.upper_leg_length**2 - self.lower_leg_length**2) / (-2 * self.upper_leg_length * self.lower_leg_length))
@@ -69,11 +68,12 @@ class RobotIK():
             upper_leg_4 = (pi - 1.5707 - phi_4)
 
         THETA04 = self.lower_leg_angle_to_servo_angle(upper_leg_4, lower_leg_4)
-
+        
         joint_angles = np.array([[0., 0., 0., 0.],
                         [- upper_leg_1, upper_leg_2, upper_leg_3, - upper_leg_4],
                         [- THETA01, THETA02, THETA03, - THETA04]])
 
+        #print("joint_angles",joint_angles/3.14*180)
         state.joint_angles = joint_angles
         return joint_angles
     
@@ -113,7 +113,7 @@ class RobotIK():
         ## Calculate remaining internal angles of linkage
         ABC = np.pi-th2 + th3
         BCD  = th4-th3
-        CDA = np.pi*2 - th2 - ABC - BCD
+        CDA = np.pi*2 - th2 - ABC - BCD 
                         
         return ABC,BCD,CDA
     
@@ -136,9 +136,9 @@ class RobotIK():
         THETA0: float
             The angle of the servo that drives the outside of the linkage
         '''
-        # First 4 bar linkages
-        DGF,GFE,FED = self.calculate_4_bar(THETA3,self.linkage.a,self.linkage.b,self.linkage.c,self.linkage.d) #+ link.lower_leg_bend_angle
-        THETA0 = pi/2 - (FED - THETA2)
+        
+        THETA0 = 2*pi - 0.75*pi -THETA3 -THETA2
+        THETA0 = pi/2- THETA0
 
         return THETA0
         
@@ -147,9 +147,9 @@ if __name__ == "__main__":
     # test code 
     Triceratop_IK = RobotIK()
 
-    foot_locations = np.array([[ -20,   -20,    -20,    -20],
-                            [-100,  -100,   -100,   -100],
-                            [       0,         0,          0,          0]])
+    foot_locations = np.array([[   20,        20,       -20,         -20],
+                            [       0,      -100,       -100,       -100],
+                            [    -100,      -100,       -100,       -100]])
     joint_angles = Triceratop_IK.leg_inverse_kinematics(foot_locations)*180/3.14
 
     time.sleep(0.2)
