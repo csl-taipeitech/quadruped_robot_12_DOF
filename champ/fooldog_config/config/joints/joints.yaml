@@ -1,0 +1,26 @@
+/**:
+  ros__parameters:
+    joints_map:
+      left_front:
+        - fl
+        - flu
+        - fld
+        - flf
+
+      right_front:
+        - fr
+        - fru
+        - frd
+        - frf
+
+      left_hind:
+        - bl
+        - blu
+        - bld
+        - blf
+
+      right_hind:
+        - br
+        - bru
+        - brd
+        - brf

@@ -1,0 +1,27 @@
+/**:
+  ros__parameters:
+    links_map:
+      base: base_link
+      left_front:
+        - fl_Link
+        - flu_Link
+        - fld_Link
+        - flf_Link
+
+      right_front:
+        - fr_Link
+        - fru_Link
+        - frd_Link
+        - frf_Link
+
+      left_hind:
+        - bl_Link
+        - blu_Link
+        - bld_Link
+        - blf_Link
+
+      right_hind:
+        - br_Link
+        - bru_Link
+        - brd_Link
+        - brf_Link

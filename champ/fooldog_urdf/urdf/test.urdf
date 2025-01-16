@@ -1,0 +1,885 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="fooldog_urdf">
+  <link name="base_link">
+    <visual>
+      <origin
+        xyz="-0.0313813075929248 -0.00081345874439115 -0.0203361388423792"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://fooldog_urdf/meshes/base_link.STL"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://fooldog_urdf/meshes/base_link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Fixed joint to add dummy inertia link -->
+  <joint name="base_to_base_inertia" type="fixed">
+    <parent link="base_link" />
+    <child link="base_inertia" />
+    <origin rpy="0 0 0" xyz="0 0 0" />
+  </joint>
+  <!-- Dummy inertia link, because KDL cannot have inertia on the base link -->
+  <link name="base_inertia">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.1"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+  </link>
+  <link
+    name="fl_Link">
+    <inertial>
+      <origin
+        xyz="0.0362396128583494 0.000881421034328853 -0.0121399997669012"
+        rpy="0 0 0" />
+      <mass
+        value="0.115606527774141" />
+      <inertia
+        ixx="2.7672758582273E-05"
+        ixy="3.61016816676796E-07"
+        ixz="-6.54728431466397E-09"
+        iyy="3.30818992521892E-05"
+        iyz="2.55280788679725E-07"
+        izz="2.76816776750825E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/fl_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/fl_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fl"
+    type="continuous">
+    <origin
+      xyz="0.00723678392728447 0.0485586045266115 -0.0196700000000003"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="fl_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="flu_Link">
+    <inertial>
+      <origin
+        xyz="-8.3100610129283E-08 0.00250249593004062 -0.0325001100766686"
+        rpy="0 0 0" />
+      <mass
+        value="0.00356977187980691" />
+      <inertia
+        ixx="1.54760219123258E-06"
+        ixy="-1.97101940239977E-13"
+        ixz="-1.11937080823944E-11"
+        iyy="1.56961934496898E-06"
+        iyz="6.87149175614032E-13"
+        izz="3.6891361382989E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/flu_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/flu_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="flu"
+    type="continuous">
+    <origin
+      xyz="0.0524464493931691 0.0209174990447602 -0.0240000000000004"
+      rpy="0 0 0" />
+    <parent
+      link="fl_Link" />
+    <child
+      link="flu_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="fld_Link">
+    <inertial>
+      <origin
+        xyz="-2.18695815623615E-09 0.00249999534071721 -0.0374999107536592"
+        rpy="0 0 0" />
+      <mass
+        value="0.00406938938923673" />
+      <inertia
+        ixx="2.2827457514132E-06"
+        ixy="-1.78424846650356E-14"
+        ixz="-9.64938373066733E-12"
+        iyy="2.30788290654951E-06"
+        iyz="7.26000690668644E-13"
+        izz="4.20931619021605E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/fld_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/fld_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fld"
+    type="continuous">
+    <origin
+      xyz="0 0.00500250095523978 -0.0649999643759598"
+      rpy="0 0 0" />
+    <parent
+      link="flu_Link" />
+    <child
+      link="fld_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="flf_Link">
+    <inertial>
+      <origin
+        xyz="-1.7541244572844E-07 0.00250004386431849 6.64767560998314E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.000392662064001443" />
+      <inertia
+        ixx="3.27416101920322E-09"
+        ixy="1.37752604700155E-13"
+        ixz="-4.67235530190916E-13"
+        iyy="4.90800875634096E-09"
+        iyz="-5.22046555243651E-14"
+        izz="3.26984780841236E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/flf_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/flf_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="flf"
+    type="fixed">
+    <origin
+      xyz="0 0.00499999999999999 -0.074999999999994"
+      rpy="0 0 0" />
+    <parent
+      link="fld_Link" />
+    <child
+      link="flf_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="fr_Link">
+    <inertial>
+      <origin
+        xyz="0.0353657573446796 -0.000881458634347174 -0.01213993551594"
+        rpy="0 0 0" />
+      <mass
+        value="0.115607202953719" />
+      <inertia
+        ixx="2.76734007268047E-05"
+        ixy="3.37826313509432E-07"
+        ixz="3.83056804594391E-09"
+        iyy="3.30828494629692E-05"
+        iyz="-2.55205398451743E-07"
+        izz="2.76822536893207E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/fr_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/fr_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fr"
+    type="continuous">
+    <origin
+      xyz="0.00723678407973241 -0.0485586045266115 -0.0196700000000008"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="fr_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="fru_Link">
+    <inertial>
+      <origin
+        xyz="-9.60401154992407E-08 -0.00250250502519832 -0.0325000978434327"
+        rpy="0 0 0" />
+      <mass
+        value="0.00356977238820035" />
+      <inertia
+        ixx="1.54759961428198E-06"
+        ixy="-1.97101704470595E-13"
+        ixz="-6.88471641797329E-12"
+        iyy="1.56961675869309E-06"
+        iyz="6.8714897248459E-13"
+        izz="3.68913533286807E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/fru_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/fru_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fru"
+    type="continuous">
+    <origin
+      xyz="0.0524464492407212 -0.0209174999999999 -0.0239999999999998"
+      rpy="0 0 0" />
+    <parent
+      link="fr_Link" />
+    <child
+      link="fru_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="frd_Link">
+    <inertial>
+      <origin
+        xyz="-2.18507476001939E-09 -0.00250000465928281 -0.0374999107245979"
+        rpy="0 0 0" />
+      <mass
+        value="0.00406938939511331" />
+      <inertia
+        ixx="2.28274575309022E-06"
+        ixy="-1.78424846448734E-14"
+        ixz="-1.5549255750963E-12"
+        iyy="2.30788290877387E-06"
+        iyz="7.2600069040035E-13"
+        izz="4.20931624641901E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/frd_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/frd_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="frd"
+    type="continuous">
+    <origin
+      xyz="0 -0.00500249999999999 -0.0649999643759603"
+      rpy="0 0 0" />
+    <parent
+      link="fru_Link" />
+    <child
+      link="frd_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="frf_Link">
+    <inertial>
+      <origin
+        xyz="-1.75412445735379E-07 -0.00249995613568155 6.64767560998314E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.000392662064001445" />
+      <inertia
+        ixx="3.27416101920321E-09"
+        ixy="1.37752604691601E-13"
+        ixz="-4.67235530206812E-13"
+        iyy="4.90800875634099E-09"
+        iyz="-5.2204655523192E-14"
+        izz="3.26984780841239E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/frf_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/frf_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="frf"
+    type="fixed">
+    <origin
+      xyz="0 -0.005 -0.074999999999994"
+      rpy="0 0 0" />
+    <parent
+      link="frd_Link" />
+    <child
+      link="frf_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="bl_Link">
+    <inertial>
+      <origin
+        xyz="-0.0353656984838925 0.000881421071971408 -0.0121399784381246"
+        rpy="0 0 0" />
+      <mass
+        value="0.115606746709192" />
+      <inertia
+        ixx="2.76728053327667E-05"
+        ixy="3.3785144523757E-07"
+        ixz="-3.82770738138678E-09"
+        iyy="3.30820511910554E-05"
+        iyz="2.55278303662232E-07"
+        izz="2.76818219754704E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/bl_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/bl_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bl"
+    type="continuous">
+    <origin
+      xyz="-0.0692103140818923 0.0485586045266112 -0.0196700000000008"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="bl_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="blu_Link">
+    <inertial>
+      <origin
+        xyz="1.1228012866682E-07 0.00250249440029281 -0.032500098852133"
+        rpy="0 0 0" />
+      <mass
+        value="0.00356977238751855" />
+      <inertia
+        ixx="1.54759981979417E-06"
+        ixy="9.94211959482504E-14"
+        ixz="5.39826442711664E-12"
+        iyy="1.56961637954596E-06"
+        iyz="6.26996673026569E-13"
+        izz="3.68907686642067E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/blu_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/blu_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="blu"
+    type="continuous">
+    <origin
+      xyz="-0.0524464492407207 0.0209175 -0.0239999999999998"
+      rpy="0 0 0" />
+    <parent
+      link="bl_Link" />
+    <child
+      link="blu_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="bld_Link">
+    <inertial>
+      <origin
+        xyz="-1.48403035404865E-06 0.00249999533943603 -0.0374999107290417"
+        rpy="0 0 0" />
+      <mass
+        value="0.00406938939249337" />
+      <inertia
+        ixx="2.2827457410441E-06"
+        ixy="-1.77627036630698E-14"
+        ixz="-9.15969091535514E-11"
+        iyy="2.30788289894054E-06"
+        iyz="7.26289520460782E-13"
+        izz="4.20931646573267E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/bld_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/bld_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bld"
+    type="continuous">
+    <origin
+      xyz="0 0.00500249999999998 -0.0649999643759606"
+      rpy="0 0 0" />
+    <parent
+      link="blu_Link" />
+    <child
+      link="bld_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="blf_Link">
+    <inertial>
+      <origin
+        xyz="-1.75408453165216E-07 0.00250004386431849 6.64936707639452E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00039266206400142" />
+      <inertia
+        ixx="3.27416093160848E-09"
+        ixy="1.37749469314318E-13"
+        ixz="-4.67362462897062E-13"
+        iyy="4.90800876098625E-09"
+        iyz="-5.22179387556621E-14"
+        izz="3.26984790065226E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/blf_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/blf_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="blf"
+    type="fixed">
+    <origin
+      xyz="0 0.00499999999999999 -0.074999999941437"
+      rpy="0 0 0" />
+    <parent
+      link="bld_Link" />
+    <child
+      link="blf_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="br_Link">
+    <inertial>
+      <origin
+        xyz="-0.0362397199110994 -0.000881456036391337 -0.0121399127339061"
+        rpy="0 0 0" />
+      <mass
+        value="0.115607363509946" />
+      <inertia
+        ixx="2.76734322521145E-05"
+        ixy="3.60978319233135E-07"
+        ixz="6.55980950809089E-09"
+        iyy="3.30829941252106E-05"
+        iyz="-2.55207890327998E-07"
+        izz="2.76823756757094E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/br_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/br_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br"
+    type="continuous">
+    <origin
+      xyz="-0.069210317591168 -0.0485586045266115 -0.0196700000000008"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="br_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="bru_Link">
+    <inertial>
+      <origin
+        xyz="1.02849901359447E-07 -0.00250250559970802 -0.0325001110853673"
+        rpy="0 0 0" />
+      <mass
+        value="0.00356977187912478" />
+      <inertia
+        ixx="1.5476023967445E-06"
+        ixy="9.94214576251833E-14"
+        ixz="9.70725542679528E-12"
+        iyy="1.56961896582311E-06"
+        iyz="6.26996918220703E-13"
+        izz="3.68907767200401E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/bru_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/bru_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bru"
+    type="continuous">
+    <origin
+      xyz="-0.052446449240721 -0.0209174999999999 -0.0239999999999998"
+      rpy="0 0 0" />
+    <parent
+      link="br_Link" />
+    <child
+      link="bru_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="brd_Link">
+    <inertial>
+      <origin
+        xyz="-1.48402847253981E-06 -0.00250000466056437 -0.0374999107581021"
+        rpy="0 0 0" />
+      <mass
+        value="0.00406938938661598" />
+      <inertia
+        ixx="2.28274574000674E-06"
+        ixy="-1.77626978067659E-14"
+        ixz="-8.35024509948514E-11"
+        iyy="2.30788289671611E-06"
+        iyz="7.26289512701157E-13"
+        izz="4.20931634555637E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/brd_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/brd_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="brd"
+    type="continuous">
+    <origin
+      xyz="0 -0.00500249999999999 -0.0649999643759606"
+      rpy="0 0 0" />
+    <parent
+      link="bru_Link" />
+    <child
+      link="brd_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="brf_Link">
+    <inertial>
+      <origin
+        xyz="-1.75408453165216E-07 -0.00249995613568155 6.64936707917008E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.000392662064001423" />
+      <inertia
+        ixx="3.27416093160849E-09"
+        ixy="1.37749469310933E-13"
+        ixz="-4.67362462889038E-13"
+        iyy="4.90800876098628E-09"
+        iyz="-5.22179387502366E-14"
+        izz="3.2698479006523E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/brf_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fooldog_urdf/meshes/brf_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="brf"
+    type="fixed">
+    <origin
+      xyz="0 -0.005 -0.074999999941437"
+      rpy="0 0 0" />
+    <parent
+      link="brd_Link" />
+    <child
+      link="brf_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+</robot>
