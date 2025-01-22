@@ -1,7 +1,7 @@
+
 class GaitController:
     def __init__(self, config):
         self.config = config
-
 
     def phase_index(self, ticks):
         """Calculates which part of the gait cycle the robot should be in given the time in ticks.
