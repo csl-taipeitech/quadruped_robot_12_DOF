@@ -10,7 +10,7 @@ cd quadruped_robot_12_DOF/triceratops_quadruped_robot/triceratops_base/
 python3 Controller.py
 ```
 
-## Step 3: Control the Robot
+## Step 2: Control the Robot
 
 You can control the robot using a joystick.
 
