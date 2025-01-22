@@ -1,0 +1,5 @@
+[2024-12-27 16:50:40,244] [DXL_Communication .DXL_motor_6] [ERROR]: rebootMotor : ID:6 reboot Error: [TxRxResult] There is no status packet!
+[2024-12-27 16:50:40,245] [DXL_Communication .DXL_motor_6] [INFO]: rebootMotor : [ID:6] reboot Succeeded
+[2024-12-27 16:50:41,695] [DXL_Communication .DXL_motor_6] [INFO]: enableMotor : Motor6 is successfully armed
+[2024-12-27 16:51:06,941] [DXL_Communication .DXL_motor_6] [INFO]: disableMotor : Motor6 disarmed SUCCESSFULLY
+[2024-12-27 16:51:07,149] [DXL_Communication .DXL_motor_6] [DEBUG]: closeLog : Remove handler from DXL_Motor 6

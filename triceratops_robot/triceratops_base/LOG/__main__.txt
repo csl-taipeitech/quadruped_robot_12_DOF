@@ -1,0 +1,115 @@
+[2024-12-27 15:01:17,837] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to open the port
+[2024-12-27 15:01:17,844] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to change the baudrate
+[2024-12-27 15:01:17,881] [DXL_Communication .DXL_motor_1] [INFO]: pingMotor : [ID:001] ping Succeeded. Dynamixel model number : 1090
+[2024-12-27 15:01:17,929] [DXL_Communication .DXL_motor_1] [DEBUG]: torqueEnabled : 0
+[2024-12-27 15:01:17,961] [DXL_Communication .DXL_motor_1] [INFO]: switchMode : Motor 1 OP Mode chenge to 16 : True
+[2024-12-27 15:27:18,773] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to open the port
+[2024-12-27 15:27:18,780] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to change the baudrate
+[2024-12-27 15:27:18,817] [DXL_Communication .DXL_motor_1] [INFO]: pingMotor : [ID:001] ping Succeeded. Dynamixel model number : 1090
+[2024-12-27 15:27:18,865] [DXL_Communication .DXL_motor_1] [DEBUG]: torqueEnabled : 0
+[2024-12-27 15:27:18,897] [DXL_Communication .DXL_motor_1] [INFO]: switchMode : Motor 1 OP Mode chenge to 16 : True
+[2024-12-27 15:28:21,878] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to open the port
+[2024-12-27 15:28:21,885] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to change the baudrate
+[2024-12-27 15:28:21,921] [DXL_Communication .DXL_motor_1] [INFO]: pingMotor : [ID:001] ping Succeeded. Dynamixel model number : 1090
+[2024-12-27 15:28:21,969] [DXL_Communication .DXL_motor_1] [DEBUG]: torqueEnabled : 0
+[2024-12-27 15:28:22,001] [DXL_Communication .DXL_motor_1] [INFO]: switchMode : Motor 1 OP Mode chenge to 16 : True
+[2024-12-27 16:37:43,938] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to open the port
+[2024-12-27 16:37:43,945] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to change the baudrate
+[2024-12-27 16:37:43,982] [DXL_Communication .DXL_motor_1] [INFO]: pingMotor : [ID:001] ping Succeeded. Dynamixel model number : 1090
+[2024-12-27 16:37:44,030] [DXL_Communication .DXL_motor_1] [DEBUG]: torqueEnabled : 0
+[2024-12-27 16:37:44,062] [DXL_Communication .DXL_motor_1] [INFO]: switchMode : Motor 1 OP Mode chenge to 16 : True
+[2024-12-27 16:38:19,661] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to open the port
+[2024-12-27 16:38:19,669] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to change the baudrate
+[2024-12-27 16:38:19,704] [DXL_Communication .DXL_motor_1] [INFO]: pingMotor : [ID:001] ping Succeeded. Dynamixel model number : 1090
+[2024-12-27 16:38:19,752] [DXL_Communication .DXL_motor_1] [DEBUG]: torqueEnabled : 0
+[2024-12-27 16:38:19,784] [DXL_Communication .DXL_motor_1] [INFO]: switchMode : Motor 1 OP Mode chenge to 16 : True
+[2024-12-27 16:39:02,204] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to open the port
+[2024-12-27 16:39:02,211] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to change the baudrate
+[2024-12-27 16:39:02,247] [DXL_Communication .DXL_motor_1] [INFO]: pingMotor : [ID:001] ping Succeeded. Dynamixel model number : 1090
+[2024-12-27 16:39:02,295] [DXL_Communication .DXL_motor_1] [DEBUG]: torqueEnabled : 0
+[2024-12-27 16:39:02,327] [DXL_Communication .DXL_motor_1] [INFO]: switchMode : Motor 1 OP Mode chenge to 16 : True
+[2024-12-30 17:48:56,113] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to open the port
+[2024-12-30 17:48:56,142] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to change the baudrate
+[2024-12-30 17:48:56,173] [DXL_Communication .DXL_motor_1] [INFO]: pingMotor : [ID:001] ping Succeeded. Dynamixel model number : 1090
+[2024-12-30 17:48:56,221] [DXL_Communication .DXL_motor_1] [DEBUG]: torqueEnabled : 1
+[2024-12-30 17:48:56,221] [DXL_Communication .DXL_motor_1] [WARNING]: switchMode : Mode Not Changed
+[2024-12-30 17:48:56,221] [DXL_Communication .DXL_motor_1] [WARNING]: switchMode : Disable Motor {self.DXL_ID} first
+[2024-12-30 17:51:24,716] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to open the port
+[2024-12-30 17:51:24,723] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to change the baudrate
+[2024-12-30 17:51:24,759] [DXL_Communication .DXL_motor_1] [INFO]: pingMotor : [ID:001] ping Succeeded. Dynamixel model number : 1090
+[2024-12-30 17:51:24,775] [DXL_Communication .DXL_motor_1] [DEBUG]: torqueEnabled : 1
+[2024-12-30 17:51:24,775] [DXL_Communication .DXL_motor_1] [WARNING]: switchMode : Mode Not Changed
+[2024-12-30 17:51:24,775] [DXL_Communication .DXL_motor_1] [WARNING]: switchMode : Disable Motor {self.DXL_ID} first
+[2024-12-30 17:52:32,847] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to open the port
+[2024-12-30 17:52:32,853] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to change the baudrate
+[2024-12-30 17:52:32,890] [DXL_Communication .DXL_motor_1] [INFO]: pingMotor : [ID:001] ping Succeeded. Dynamixel model number : 1090
+[2024-12-30 17:52:32,905] [DXL_Communication .DXL_motor_1] [DEBUG]: torqueEnabled : 1
+[2024-12-30 17:52:32,906] [DXL_Communication .DXL_motor_1] [WARNING]: switchMode : Mode Not Changed
+[2024-12-30 17:52:32,906] [DXL_Communication .DXL_motor_1] [WARNING]: switchMode : Disable Motor {self.DXL_ID} first
+[2024-12-30 17:54:56,220] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to open the port
+[2024-12-30 17:54:56,227] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to change the baudrate
+[2024-12-30 17:54:56,264] [DXL_Communication .DXL_motor_1] [INFO]: pingMotor : [ID:001] ping Succeeded. Dynamixel model number : 1090
+[2024-12-30 17:54:56,279] [DXL_Communication .DXL_motor_1] [DEBUG]: torqueEnabled : 1
+[2024-12-30 17:54:56,280] [DXL_Communication .DXL_motor_1] [WARNING]: switchMode : Mode Not Changed
+[2024-12-30 17:54:56,280] [DXL_Communication .DXL_motor_1] [WARNING]: switchMode : Disable Motor {self.DXL_ID} first
+[2024-12-30 17:55:18,104] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to open the port
+[2024-12-30 17:55:18,111] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to change the baudrate
+[2024-12-30 17:55:18,148] [DXL_Communication .DXL_motor_1] [INFO]: pingMotor : [ID:001] ping Succeeded. Dynamixel model number : 1090
+[2024-12-30 17:55:18,164] [DXL_Communication .DXL_motor_1] [DEBUG]: torqueEnabled : 1
+[2024-12-30 17:55:18,164] [DXL_Communication .DXL_motor_1] [WARNING]: switchMode : Mode Not Changed
+[2024-12-30 17:55:18,164] [DXL_Communication .DXL_motor_1] [WARNING]: switchMode : Disable Motor {self.DXL_ID} first
+[2024-12-30 17:55:46,718] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to open the port
+[2024-12-30 17:55:46,725] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to change the baudrate
+[2024-12-30 17:55:46,761] [DXL_Communication .DXL_motor_1] [INFO]: pingMotor : [ID:001] ping Succeeded. Dynamixel model number : 1090
+[2024-12-30 17:55:46,777] [DXL_Communication .DXL_motor_1] [DEBUG]: torqueEnabled : 1
+[2024-12-30 17:55:46,777] [DXL_Communication .DXL_motor_1] [WARNING]: switchMode : Mode Not Changed
+[2024-12-30 17:55:46,777] [DXL_Communication .DXL_motor_1] [WARNING]: switchMode : Disable Motor {self.DXL_ID} first
+[2024-12-30 17:57:12,725] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to open the port
+[2024-12-30 17:57:12,732] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to change the baudrate
+[2024-12-30 17:57:12,769] [DXL_Communication .DXL_motor_1] [INFO]: pingMotor : [ID:001] ping Succeeded. Dynamixel model number : 1090
+[2024-12-30 17:57:12,817] [DXL_Communication .DXL_motor_1] [DEBUG]: torqueEnabled : 1
+[2024-12-30 17:57:12,817] [DXL_Communication .DXL_motor_1] [WARNING]: switchMode : Mode Not Changed
+[2024-12-30 17:57:12,817] [DXL_Communication .DXL_motor_1] [WARNING]: switchMode : Disable Motor {self.DXL_ID} first
+[2024-12-30 17:57:22,316] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to open the port
+[2024-12-30 17:57:22,323] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to change the baudrate
+[2024-12-30 17:57:22,358] [DXL_Communication .DXL_motor_1] [INFO]: pingMotor : [ID:001] ping Succeeded. Dynamixel model number : 1090
+[2024-12-30 17:57:22,406] [DXL_Communication .DXL_motor_1] [DEBUG]: torqueEnabled : 1
+[2024-12-30 17:57:22,407] [DXL_Communication .DXL_motor_1] [WARNING]: switchMode : Mode Not Changed
+[2024-12-30 17:57:22,407] [DXL_Communication .DXL_motor_1] [WARNING]: switchMode : Disable Motor {self.DXL_ID} first
+[2024-12-30 17:57:34,714] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to open the port
+[2024-12-30 17:57:34,721] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to change the baudrate
+[2024-12-30 17:57:34,757] [DXL_Communication .DXL_motor_1] [INFO]: pingMotor : [ID:001] ping Succeeded. Dynamixel model number : 1090
+[2024-12-30 17:57:34,805] [DXL_Communication .DXL_motor_1] [DEBUG]: torqueEnabled : 1
+[2024-12-30 17:57:34,806] [DXL_Communication .DXL_motor_1] [WARNING]: switchMode : Mode Not Changed
+[2024-12-30 17:57:34,806] [DXL_Communication .DXL_motor_1] [WARNING]: switchMode : Disable Motor {self.DXL_ID} first
+[2024-12-30 18:12:02,906] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to open the port
+[2024-12-30 18:12:02,912] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to change the baudrate
+[2024-12-30 18:12:02,949] [DXL_Communication .DXL_motor_1] [INFO]: pingMotor : [ID:001] ping Succeeded. Dynamixel model number : 1090
+[2024-12-30 18:12:02,997] [DXL_Communication .DXL_motor_1] [DEBUG]: torqueEnabled : 1
+[2024-12-30 18:12:02,997] [DXL_Communication .DXL_motor_1] [WARNING]: switchMode : Mode Not Changed
+[2024-12-30 18:12:02,997] [DXL_Communication .DXL_motor_1] [WARNING]: switchMode : Disable Motor {self.DXL_ID} first
+[2024-12-30 19:04:13,429] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to open the port
+[2024-12-30 19:04:13,436] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to change the baudrate
+[2024-12-30 19:04:13,473] [DXL_Communication .DXL_motor_1] [INFO]: pingMotor : [ID:001] ping Succeeded. Dynamixel model number : 1090
+[2024-12-30 19:04:13,521] [DXL_Communication .DXL_motor_1] [DEBUG]: torqueEnabled : 0
+[2024-12-30 19:04:13,553] [DXL_Communication .DXL_motor_1] [INFO]: switchMode : Motor 1 OP Mode chenge to 16 : True
+[2024-12-31 17:57:21,675] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to open the port
+[2024-12-31 17:57:21,683] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to change the baudrate
+[2024-12-31 17:57:21,718] [DXL_Communication .DXL_motor_1] [INFO]: pingMotor : [ID:001] ping Succeeded. Dynamixel model number : 1090
+[2024-12-31 17:57:21,766] [DXL_Communication .DXL_motor_1] [DEBUG]: torqueEnabled : 0
+[2024-12-31 17:57:21,798] [DXL_Communication .DXL_motor_1] [INFO]: switchMode : Motor 1 OP Mode chenge to 16 : True
+[2024-12-31 17:58:08,067] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to open the port
+[2024-12-31 17:58:08,074] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to change the baudrate
+[2024-12-31 17:58:08,111] [DXL_Communication .DXL_motor_1] [INFO]: pingMotor : [ID:001] ping Succeeded. Dynamixel model number : 1090
+[2024-12-31 17:58:08,159] [DXL_Communication .DXL_motor_1] [DEBUG]: torqueEnabled : 0
+[2024-12-31 17:58:08,191] [DXL_Communication .DXL_motor_1] [INFO]: switchMode : Motor 1 OP Mode chenge to 16 : True
+[2024-12-31 17:58:30,407] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to open the port
+[2024-12-31 17:58:30,414] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to change the baudrate
+[2024-12-31 17:58:30,450] [DXL_Communication .DXL_motor_1] [INFO]: pingMotor : [ID:001] ping Succeeded. Dynamixel model number : 1090
+[2024-12-31 17:58:30,498] [DXL_Communication .DXL_motor_1] [DEBUG]: torqueEnabled : 0
+[2024-12-31 17:58:30,530] [DXL_Communication .DXL_motor_1] [INFO]: switchMode : Motor 1 OP Mode chenge to 16 : True
+[2024-12-31 17:58:55,663] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to open the port
+[2024-12-31 17:58:55,670] [DXL_Communication] [INFO]: activateDXLConnection : Succeeded to change the baudrate
+[2024-12-31 17:58:55,707] [DXL_Communication .DXL_motor_1] [INFO]: pingMotor : [ID:001] ping Succeeded. Dynamixel model number : 1090
+[2024-12-31 17:58:55,755] [DXL_Communication .DXL_motor_1] [DEBUG]: torqueEnabled : 0
+[2024-12-31 17:58:55,787] [DXL_Communication .DXL_motor_1] [INFO]: switchMode : Motor 1 OP Mode chenge to 16 : True
