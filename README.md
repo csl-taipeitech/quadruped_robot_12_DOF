@@ -23,8 +23,6 @@ This project aims to achieve motion control for a bionic quadruped robot through
 2. Navigate to the robot's program directory and execute the control script:
     
     ```bash
-    bash
-    CopyEdit
     cd triceratops_quadruped_robot/triceratops_base/
     python3 Controller.py
     
