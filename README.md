@@ -1,4 +1,4 @@
-![Screenshot from 2025-02-03 11-49-10](https://github.com/user-attachments/assets/d4d8be86-14cc-4b16-b857-156f8fa14d3d)# **Bionic Quadruped Robot Control System**
+# **Bionic Quadruped Robot Control System**
 
 ## **Project Objective**
 
@@ -29,7 +29,7 @@ This project aims to achieve motion control for a bionic quadruped robot through
     python3 Controller.py
     
     ```
-    
+
 
 ---
 
@@ -65,7 +65,7 @@ You can control the robot using a joystick.
 
 ## **System Architecture and Workflow**
 
-file:///home/ray/Pictures/Screenshots/Screenshot%20from%202025-02-03%2011-46-53.png
+<img width="2588" alt="2048 game mode UI design (Copy) (2)" src="https://github.com/user-attachments/assets/900f7fa2-77a1-49ab-8bd0-c4151f266a9f" />
 
 
 The main program, **Controller.py**, runs in a loop and controls the quadruped robot’s movements through the **Joystick Interface, Controller, and Hardware Interface**.
@@ -88,7 +88,7 @@ The main program, **Controller.py**, runs in a loop and controls the quadruped r
 
 ## **Gait Control**
 
-file:///home/ray/Pictures/Screenshots/Screenshot%20from%202025-02-03%2011-49-10.png
+![Screenshot from 2025-02-03 11-49-10](https://github.com/user-attachments/assets/d4d8be86-14cc-4b16-b857-156f8fa14d3d)
 
 
 The gait control system consists of **four core modules**:
