@@ -140,7 +140,7 @@ The gait control system consists of **four core modules**:
 
 ### **2. Chinese Learning Materials**
 
-- **[Tutorial] DengGe's Beginner DIY Quadruped Robot Guide (New Version)**📺 [Bilibili Tutorial Video](https://www.bilibili.com/video/BV1b5411L7ks/?spm_id_from=333.337.search-card.all.click)
+- [Tutorial] DengGe's Beginner DIY Quadruped Robot Guide (New Version)📺 [Bilibili Tutorial Video](https://www.bilibili.com/video/BV1b5411L7ks/?spm_id_from=333.337.search-card.all.click)
     - **Gait**
         - Chapter 3.1: Trot Gait
         - Chapter 3.8: Trot Gait Program Implementation
@@ -150,6 +150,6 @@ The gait control system consists of **four core modules**:
 ### **3. English Learning Materials**
 
 - **Gait Control**
-    - *Legged Robotics Lec14a: Raibert foot placement control for hopper (Spring 2021)*📺 [YouTube Link](https://www.youtube.com/watch?v=7eWLyo2a5UE)
+    - Legged Robotics Lec14a: Raibert foot placement control for hopper (Spring 2021)📺 [YouTube Link](https://www.youtube.com/watch?v=7eWLyo2a5UE)
 - **Inverse Kinematics**
     - *Inverse Kinematics for SpotMicro Robotics | Example and Demo*📺 [YouTube Link](https://www.youtube.com/watch?v=4rc8N1xuWvc&list=PLAPTbzQ9K5TCaQBTw4c2F2jYY1ZrWi0pl&index=5)
