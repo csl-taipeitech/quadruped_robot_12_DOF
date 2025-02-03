@@ -65,8 +65,7 @@ You can control the robot using a joystick.
 
 ## **System Architecture and Workflow**
 
-<img width="2588" alt="2048 game mode UI design (Copy) (2)" src="https://github.com/user-attachments/assets/900f7fa2-77a1-49ab-8bd0-c4151f266a9f" />
-
+![Screenshot from 2025-02-03 12-04-42](https://github.com/user-attachments/assets/9a17089f-1145-41c6-acc5-29f182b11df5)
 
 The main program, **Controller.py**, runs in a loop and controls the quadruped robot’s movements through the **Joystick Interface, Controller, and Hardware Interface**.
 
