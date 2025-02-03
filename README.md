@@ -25,7 +25,7 @@ This project aims to achieve motion control for a bionic quadruped robot through
     ```bash
     bash
     CopyEdit
-    cd quadruped_robot_12_DOF/triceratops_quadruped_robot/triceratops_base/
+    cd triceratops_quadruped_robot/triceratops_base/
     python3 Controller.py
     
     ```
@@ -43,9 +43,7 @@ You can control the robot using a joystick.
 2. Run the joystick controller script:
     
     ```bash
-    bash
-    CopyEdit
-    cd champ/src/champ_teleop/
+    cd triceratops_quadruped_robot/triceratops_base/
     python3 Joy_controller.py
     
     ```
@@ -54,8 +52,6 @@ You can control the robot using a joystick.
 4. Start the `joy_node` topic:
     
     ```bash
-    bash
-    CopyEdit
     ros2 run joy joy_node
     
     ```
