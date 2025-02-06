@@ -51,7 +51,7 @@ class RobotControl:
         self.is_walking = False
         self.motor_position = np.zeros(8)
 
-        self.dt = 0.05
+        self.dt = 0.1 #0.05
         self.t = 0
 
         self.lock = threading.Lock()
@@ -85,7 +85,7 @@ class RobotControl:
         THETA04 = self.lower_leg_angle_to_servo_angle( jointAngleUpper4, self.jointAngle_data['bld'])
         self.joint_angles = np.array([[THETA01, - THETA02, - THETA03, THETA04],
                                 [jointAngleUpper1, - jointAngleUpper2, -jointAngleUpper3, jointAngleUpper4],
-                                [self.jointAngle_data['fr'], self.jointAngle_data['fl'], self.jointAngle_data['br'], self.jointAngle_data['bl']]])
+                                [self.jointAngle_data['fr'], -self.jointAngle_data['fl'], self.jointAngle_data['br'], - self.jointAngle_data['bl']]])
 
     def lower_leg_angle_to_servo_angle(self, THETA2, THETA3):
         ''' Converts the direct angles of the upper and lower leg joint from the inverse kinematics to the angle

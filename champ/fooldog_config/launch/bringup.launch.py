@@ -18,7 +18,7 @@ from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.substitutions import FindPackageShare
-
+from launch.actions import ExecuteProcess
 
 def generate_launch_description():
     this_package = FindPackageShare('fooldog_config')
@@ -34,6 +34,7 @@ def generate_launch_description():
     bringup_launch_path = PathJoinSubstitution(
         [FindPackageShare('champ_bringup'), 'launch', 'tricerbringup.launch.py']
     )
+    triceratops_control_cmd_path = "/home/csl/champ/src/quadruped_robot_12_DOF/triceratops_base/Triceratops_ControlCmd_test.py"
 
     return LaunchDescription([
         DeclareLaunchArgument(
@@ -75,5 +76,10 @@ def generate_launch_description():
                 "links_map_path": links_config,
                 "gait_config_path": gait_config
             }.items(),
-        )
+        ),
+        # ExecuteProcess(
+        #     cmd=['python3', triceratops_control_cmd_path],
+        #     output='screen',
+        # )
+
     ])

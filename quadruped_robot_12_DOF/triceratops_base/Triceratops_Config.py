@@ -12,7 +12,7 @@ class RobotConfiguration:
                                                             # 3-4
 
         self.leg_center_position = np.array([   [2048, 2048, 2048, 2048],
-                                                [2048, 2048, 2000, 2048],
+                                                [2048, 2048, 2048, 2088],
                                                 [2048 ,2048, 2048, 2048]])
 
 class RobotDynamixel:

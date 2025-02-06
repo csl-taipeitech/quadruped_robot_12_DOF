@@ -1,2 +1,2 @@
-[1970-01-01 09:02:17,876] [DXL_Communication .DXL_motor_2] [INFO]: disableMotor : Motor2 disarmed UNSUCCESSFULLY
-[1970-01-01 09:02:17,994] [DXL_Communication .DXL_motor_2] [DEBUG]: closeLog : Remove handler from DXL_Motor 2
+[2025-02-06 09:44:12,784] [DXL_Communication .DXL_motor_11] [INFO]: enableMotor : Motor11 is successfully armed
+[2025-02-06 09:44:40,046] [DXL_Communication .DXL_motor_11] [INFO]: disableMotor : Motor11 disarmed SUCCESSFULLY
