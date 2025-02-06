@@ -9,6 +9,7 @@ from DXL_motor_control import DXL_Communication
 from Gait_controller import GaitController
 from Swing_controller import SwingController
 from Stance_controller import StanceController
+
 from Triceratops_IK import InverseKinematics
 
 import rclpy
@@ -154,27 +155,27 @@ class ControlCmd:
         self.setup_dynamixel()
         self.setup_motors()
         self.initialize_motor_states()
-        self.walking_freq = 2000  # Hz
+        self.walking_freq = 2000  # 2000Hz
 
     def setup_dynamixel(self):
         self.robot_dynamixel = RobotDynamixel()
         self.dynamixel = DXL_Communication(self.robot_dynamixel.DEVICE_NAME, self.robot_dynamixel.B_RATE)
         self.dynamixel.activateDXLConnection()
         
-
     def setup_motors(self):
         motor_names = ['FR_higher', 'FR_lower', 'FR_hip',  
                         'FL_higher', 'FL_lower', 'FL_hip',
                        'RR_higher', 'RR_lower', 'RR_hip',
                        'RL_higher', 'RL_lower', 'RL_hip']
-        motor_ids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+
+        self.motor_ids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
         self.motors = {name: self.dynamixel.createMotor(name, motor_number=id_) 
-                    for name, id_ in zip(motor_names, motor_ids)}
-        
+                    for name, id_ in zip(motor_names, self.motor_ids)}
+
         self.leg_motor_list = [
-            [self.motors['FR_lower'], self.motors['FL_lower'], self.motors['RR_lower'], self.motors['RL_lower']],
+            [self.motors['FR_hip'], self.motors['FL_hip'], self.motors['RR_hip'], self.motors['RL_hip']],
             [self.motors['FR_higher'], self.motors['FL_higher'], self.motors['RR_higher'], self.motors['RL_higher']],
-            [self.motors['FR_hip'], self.motors['FL_hip'], self.motors['RR_hip'], self.motors['RL_hip']]
+            [self.motors['FR_lower'], self.motors['FL_lower'], self.motors['RR_lower'], self.motors['RL_lower']]
         ]
     
     def initialize_motor_states(self):
