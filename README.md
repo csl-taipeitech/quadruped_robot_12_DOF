@@ -1,3 +1,6 @@
+
+![Untitled ‑ Made with FlexClip (68)](https://github.com/user-attachments/assets/21a16aaa-f6ab-4b26-9ec4-13107c00cee7)
+
 # How to Run the Files
 
 ## Step 1: Launch the Gait Generator
@@ -37,18 +40,117 @@ ros2 launch champ_teleop teleop.launch.py
 ```
 
 ### Joystick Controller
+![joystick](https://github.com/user-attachments/assets/8dd15f47-b1a1-47a8-9a94-0dbaa0c32bd4)
 
 1. Open another terminal
 2. Run the joystick controller script:
 
-```bash
+Default
+```
 cd champ/src/champ_teleop/
 python3 joy_controller_new.py
 ```
 
+Body_pose & hand-shake pose
+```
+cd champ/src/champ_teleop/
+python3 stanley_joy_stick.py
+```
 1. Open another terminal
 2. Start the `joy_node` topic:
 
-```bash
+```
 ros2 run joy joy_node
+```
+
+### Gait Adjustment
+![Untitled ‑ Made with FlexClip (69)](https://github.com/user-attachments/assets/ac4c482e-be14-4ec3-846b-c34961a6e350)
+
+Phase Generator
+```
+cd champ/champ/include/champ/leg_controller/phase_generator.h
+```
+
+Trot/Crawl/Gallop
+```
+//Trot
+leg_clocks[0] = elapsed_time_ref - (0.0f * stride_period);
+leg_clocks[1] = elapsed_time_ref - (0.5f * stride_period);
+leg_clocks[2] = elapsed_time_ref - (0.5f * stride_period);
+leg_clocks[3] = elapsed_time_ref - (0.0f * stride_period);
+
+//Crawl
+// leg_clocks[0] = elapsed_time_ref - (0.0f * stride_period);  // Front-Right
+// leg_clocks[1] = elapsed_time_ref - (0.25f * stride_period); // Front-Left
+// leg_clocks[2] = elapsed_time_ref - (0.50f * stride_period); // Back-Right
+// leg_clocks[3] = elapsed_time_ref - (0.75f * stride_period); // Back-Left
+
+//Gallop
+// leg_clocks[0] = elapsed_time_ref - (0.5f * stride_period);  // Front-Right
+// leg_clocks[1] = elapsed_time_ref - (0.5f * stride_period);  // Front-Left
+// leg_clocks[2] = elapsed_time_ref - (0.0f * stride_period);  // Back-Right
+// leg_clocks[3] = elapsed_time_ref - (0.0f * stride_period);  // Back-Left
+```
+
+Gait.yaml
+```
+cd champ/fooldog_config/config/gait/gait.yaml
+```
+
+```
+##Trot
+/**:
+  ros__parameters:
+    gait:
+      knee_orientation : "><"
+      pantograph_leg : false
+      odom_scaler: 1.0 
+      max_linear_velocity_x : 0.15 #0.1
+      max_linear_velocity_y : 0.065 #0.05
+      max_angular_velocity_z : 1.0 #0.1
+      com_x_translation : 0.0 #0.001
+      swing_height : 0.02 #0.04
+      stance_depth : 0.0 #0.0
+      stance_duration : 0.55 #0.5
+      nominal_height : 0.16 #0.16
+
+##Crawl
+# /**:
+#   ros__parameters:
+#     gait:
+#       knee_orientation : "><"
+#       pantograph_leg : false
+#       odom_scaler: 1.0 
+#       max_linear_velocity_x : 0.1  # Crawl is much slower
+#       max_linear_velocity_y : 0.06
+#       max_angular_velocity_z : 0.6  # Slow turning
+
+#       com_x_translation : 0.0
+#       swing_height : 0.015  # 0.01
+#       stance_depth : 0.0
+
+#       stance_duration : 0.85  # 0.9
+#       nominal_height : 0.145 #0.16
+
+#       phase_offsets: [0.0, 0.25, 0.50, 0.75]  # Change from Trot to Crawl
+
+##Gallop
+# /**:
+#   ros__parameters:
+#     gait:
+#       knee_orientation : "><"
+#       pantograph_leg : false
+#       odom_scaler: 1.5  # Faster speed
+#       max_linear_velocity_x : 0.7  # Increase speed for gallop
+#       max_linear_velocity_y : 0.2
+#       max_angular_velocity_z : 1.2  
+
+#       com_x_translation : 0.0
+#       swing_height : 0.05  # Higher lift for gallop
+#       stance_depth : 0.0
+
+#       stance_duration : 0.35  # Short stance, fast movement
+#       nominal_height : 0.15  
+
+#       phase_offsets: [0.0, 0.0, 0.5, 0.5]  # Hind legs together, front legs together
 ```
