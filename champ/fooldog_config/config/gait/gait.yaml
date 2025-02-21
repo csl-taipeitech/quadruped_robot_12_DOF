@@ -1,14 +1,55 @@
+##Trot
 /**:
   ros__parameters:
     gait:
       knee_orientation : "><"
-      pantograph_leg : True
+      pantograph_leg : false
       odom_scaler: 1.0 
-      max_linear_velocity_x : 0.1 #0.1
-      max_linear_velocity_y : 0.05 #0.05
-      max_angular_velocity_z : 0.5 #0.1
-      com_x_translation : -0.05 #0.0
-      swing_height : 0.05 #0.05
+      max_linear_velocity_x : 0.15 #0.1
+      max_linear_velocity_y : 0.065 #0.05
+      max_angular_velocity_z : 1.0 #0.1
+      com_x_translation : 0.0 #0.001
+      swing_height : 0.02 #0.04
       stance_depth : 0.0 #0.0
-      stance_duration : 0.5 #0.5
+      stance_duration : 0.55 #0.5
       nominal_height : 0.16 #0.16
+
+##Crawl
+# /**:
+#   ros__parameters:
+#     gait:
+#       knee_orientation : "><"
+#       pantograph_leg : false
+#       odom_scaler: 1.0 
+#       max_linear_velocity_x : 0.1  # Crawl is much slower
+#       max_linear_velocity_y : 0.06
+#       max_angular_velocity_z : 0.6  # Slow turning
+
+#       com_x_translation : 0.0
+#       swing_height : 0.015  # 0.01
+#       stance_depth : 0.0
+
+#       stance_duration : 0.85  # 0.9
+#       nominal_height : 0.145 #0.16
+
+#       phase_offsets: [0.0, 0.25, 0.50, 0.75]  # Change from Trot to Crawl
+
+##Gallop
+# /**:
+#   ros__parameters:
+#     gait:
+#       knee_orientation : "><"
+#       pantograph_leg : false
+#       odom_scaler: 1.5  # Faster speed
+#       max_linear_velocity_x : 0.7  # Increase speed for gallop
+#       max_linear_velocity_y : 0.2
+#       max_angular_velocity_z : 1.2  
+
+#       com_x_translation : 0.0
+#       swing_height : 0.05  # Higher lift for gallop
+#       stance_depth : 0.0
+
+#       stance_duration : 0.35  # Short stance, fast movement
+#       nominal_height : 0.15  
+
+#       phase_offsets: [0.0, 0.0, 0.5, 0.5]  # Hind legs together, front legs together

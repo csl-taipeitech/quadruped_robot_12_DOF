@@ -22,6 +22,7 @@ class SpotControlClient(Node):
         self.current_mode = ""
 
         self.linear_x_scale = 0.05
+        self.linear_y_scale = 0.07
         self.angular_scale = 1.5
         feq = 500
         self.joy = None
@@ -90,6 +91,12 @@ class SpotControlClient(Node):
             elif self.joy.axes[0]<-0.001:
                 self.joy.axes[0] += 0.001
                 vel.angular.z = self.joy.axes[0]*self.angular_scale
+            if self.joy.axes[2]>0.001:
+                self.joy.axes[2] -= 0.001
+                vel.linear.y = self.joy.axes[2]*self.linear_y_scale
+            elif self.joy.axes[2]<-0.001:
+                self.joy.axes[2] += 0.001
+                vel.linear.y = self.joy.axes[2]*self.linear_y_scale
 
         self.cmd_pub.publish(vel)
 

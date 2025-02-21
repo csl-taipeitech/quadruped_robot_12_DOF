@@ -94,11 +94,24 @@ namespace champ
                     elapsed_time_ref = stride_period;
                 else
                     elapsed_time_ref = time - last_touchdown_;
-
+                
+                //Trot
                 leg_clocks[0] = elapsed_time_ref - (0.0f * stride_period);
                 leg_clocks[1] = elapsed_time_ref - (0.5f * stride_period);
                 leg_clocks[2] = elapsed_time_ref - (0.5f * stride_period);
                 leg_clocks[3] = elapsed_time_ref - (0.0f * stride_period);
+
+                //Crawl
+                // leg_clocks[0] = elapsed_time_ref - (0.0f * stride_period);  // Front-Right
+                // leg_clocks[1] = elapsed_time_ref - (0.25f * stride_period); // Front-Left
+                // leg_clocks[2] = elapsed_time_ref - (0.50f * stride_period); // Back-Right
+                // leg_clocks[3] = elapsed_time_ref - (0.75f * stride_period); // Back-Left
+
+                //Gallop
+                // leg_clocks[0] = elapsed_time_ref - (0.5f * stride_period);  // Front-Right
+                // leg_clocks[1] = elapsed_time_ref - (0.5f * stride_period);  // Front-Left
+                // leg_clocks[2] = elapsed_time_ref - (0.0f * stride_period);  // Back-Right
+                // leg_clocks[3] = elapsed_time_ref - (0.0f * stride_period);  // Back-Left
 
                 for(int i = 0; i < 4; i++)
                 {
@@ -115,7 +128,7 @@ namespace champ
                         swing_phase_signal[i] = 0;
                 }
 
-                if(!has_swung_ && stance_phase_signal[0] < 0.5)
+                if(!has_swung_ && stance_phase_signal[0] < 0.5) //0.5
                 {
                     stance_phase_signal[0] = 0.0;
                     stance_phase_signal[3] = 0.0;
