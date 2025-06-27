@@ -19,6 +19,12 @@ ros2 launch fooldog_config bringup.launch.py
 ```
 
 ### Step 2: Run the Robot Program
+Body_pose & hand-shake pose
+
+```
+cd champ/src/champ_teleop/
+python3 stanley_joy_stick.py
+```
 
 1. Open another terminal
 2. Navigate to the robot's program directory and execute the control script:
@@ -30,40 +36,14 @@ python3 Triceratops_ControlCmd.py
 
 ### Step 3: Control the Robot
 
-You can control the robot using either a keyboard or a joystick.
-
-#### Keyboard Controller
-
-1. Open another terminal
-2. Launch the keyboard controller:
-
-```bash
-cd champ/
-source install/setup.bash
-ros2 launch champ_teleop teleop.launch.py
-```
+You can control the robot using joystick.
 
 #### Joystick Controller
 ![joystick](https://github.com/user-attachments/assets/8dd15f47-b1a1-47a8-9a94-0dbaa0c32bd4)
 
 1. Open another terminal
 2. Run the joystick controller script:
-
-Default
-
-```
-cd champ/src/champ_teleop/
-python3 joy_controller_new.py
-```
-
-Body_pose & hand-shake pose
-
-```
-cd champ/src/champ_teleop/
-python3 stanley_joy_stick.py
-```
-1. Open another terminal
-2. Start the `joy_node` topic:
+Start the `joy_node` topic:
 
 ```
 ros2 run joy joy_node
