@@ -22,6 +22,8 @@ ros2 launch fooldog_config bringup.launch.py
 Body_pose & hand-shake pose
 
 ```
+conda deactivate
+cd ~
 cd champ/src/champ_teleop/
 python3 stanley_joy_stick.py
 ```
@@ -30,6 +32,8 @@ python3 stanley_joy_stick.py
 2. Navigate to the robot's program directory and execute the control script:
 
 ```bash
+conda deactivate
+cd ~
 cd champ/src/quadruped_robot_12_DOF/triceratops_base/
 python3 Triceratops_ControlCmd.py
 ```
@@ -46,6 +50,8 @@ You can control the robot using joystick.
 Start the `joy_node` topic:
 
 ```
+conda deactivate
+cd ~
 ros2 run joy joy_node
 ```
 
