@@ -34,7 +34,7 @@ python3 stanley_joy_stick.py
 
 ```bash
 cd ~
-cd champ/src/quadruped_robot_12_DOF/triceratops_base/
+cd champ/src/champ_teleop/
 python3 Triceratops_ControlCmd.py
 ```
 press CMD: s while python3 Triceratops_ControlCmd.py to enable motor
@@ -50,7 +50,6 @@ You can control the robot using joystick.
 2. Run the joystick controller script:
 Start the `joy_node` topic:
 
-NOTICE:MAKE SURE YOU ARE NOT IN CONDA ENVIRONMENT!!
 ```
 ros2 run joy joy_node
 ```
