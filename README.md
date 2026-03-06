@@ -7,6 +7,9 @@ It can walk with linear and angular velocity, and it also allows body pose input
 
 ## How to Run the Files
 
+> **Note** Please install Nomachine on your pc first!
+> CSL@TT: 10.100.4.237
+> CSL@FET-TT: 192.168.1.129
 ### Step 1: Launch the Gait Generator
 
 1. Open a terminal
