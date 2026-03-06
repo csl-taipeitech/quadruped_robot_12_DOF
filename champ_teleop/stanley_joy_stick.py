@@ -36,12 +36,14 @@ class BodyPosePublisher(Node):
         self.publish_body_pose()
     
     def adjust_body_height(self, data):
-        """Adjusts body height based on joystick D-pad input."""
+        """Adjusts body height based on joystick D-pad up/down input (axes[7])."""
         if len(data.axes) > 7:
-            if data.axes[7] == 1:
-                self.body_z = min(0.0, self.body_z + 0.0015)
-            elif data.axes[7] == -1:
-                self.body_z = max(-0.04, self.body_z - 0.0015)
+            if data.axes[7] == 1.0:
+                self.get_logger().info("D-pad UP → raising body")
+                self.body_z = min(0.1, self.body_z + 0.005)
+            elif data.axes[7] == -1.0:
+                self.get_logger().info("D-pad DOWN → lowering body")
+                self.body_z = max(-0.1, self.body_z - 0.005)
     
     def adjust_body_tilt(self, data):
         """Handles leaning and bowing based on button presses."""
@@ -106,6 +108,7 @@ class JoystickListener(Node):
         self.linear_y_scale = 0.1
         self.angular_scale = 1.5
         self.prev_button_7 = 0 
+        self.prev_button_5 = 0 
 
         self.get_logger().info("Joystick Listener Initialized.")
 
@@ -126,13 +129,17 @@ class JoystickListener(Node):
         vel.angular.z = data.axes[2] * self.angular_scale if len(data.axes) > 2 and abs(data.axes[2]) > 0.1 else 0.0
         
         self.cmd_pub.publish(vel)
-        self.get_logger().info(f"Publishing cmd_vel: {vel}")
+        #self.get_logger().info(f"Publishing cmd_vel: {vel}")
         
         self.body_pose_publisher.update_body_pose(data)
 
         if data.buttons[7] and not self.prev_button_7:
             self.handle_handshake()
         self.prev_button_7 = data.buttons[7]
+
+        if data.buttons[5] and not self.prev_button_5:
+            self.spine_curl()
+        self.prev_button_5 = data.buttons[5]
 
     def handle_handshake(self):
         """Executes the handshake movement."""
@@ -168,6 +175,15 @@ class JoystickListener(Node):
         self.get_logger().info("Restoring body pose after handshake...")
         self.body_pose_publisher.motion_active = False  # Resume pose updates
         self.body_pose_publisher.restore_previous_pose()
+    
+    def spine_curl(self, position=None):
+        self.get_logger().info("(5 is pressed)")
+        # self.robot_control.stop()
+        # self.control_cmd.lay_down(position)
+
+        self.control_cmd.mid_motor_position_control(mid_position=1250, step=20, delay=0.01) #1040
+        time.sleep(1)
+        self.control_cmd.mid_motor_position_control(mid_position=2048, step=10, delay=0.01)
 
 def main():
     """Initializes ROS2 nodes and starts joystick listener."""
