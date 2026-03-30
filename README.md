@@ -23,11 +23,12 @@ This project aims to achieve motion control for a bionic quadruped robot through
 2. Navigate to the robot's program directory and execute the control script:
     
     ```bash
-    cd triceratops_quadruped_robot/triceratops_base/
+    cd quadruped_robot_12_DOF/triceratops_quadruped_robot/triceratops_base/
     python3 Controller.py
     
     ```
-
+    > **Note**
+    > Press m to start it
 
 ---
 
@@ -41,7 +42,7 @@ You can control the robot using a joystick.
 2. Run the joystick controller script:
     
     ```bash
-    cd triceratops_quadruped_robot/triceratops_base/
+    cd quadruped_robot_12_DOF/triceratops_quadruped_robot/triceratops_base/
     python3 Joy_controller.py
     
     ```
